@@ -38,7 +38,18 @@ $ echo $AWS_HOME
 /Users/adnanadnan/.aws
 ```
 
-### b. `whereis`
+### b. `whatis`
+whatis shows description for user commands, system calls, library functions, and others in manual pages
+```bash
+whatis something
+```
+Example:
+```bash
+$ whatis bash
+bash (1)             - GNU Bourne-Again SHell
+```
+
+### c. `whereis`
 whereis searches for executables, source files, and manual pages using a database built by system automatically.
 ```bash
 whereis name
@@ -49,7 +60,7 @@ $ whereis php
 /usr/bin/php
 ```
 
-### c. `which`
+### d. `which`
 which searches for executables in the directories specified by the environment variable PATH. This command will print the full path of the executable(s).
 ```bash
 which program_name 
@@ -60,7 +71,7 @@ $ which php
 /c/xampp/php/php
 ```
 
-### d. clear
+### e. clear
 Clears content on window.
 
 ## 1.1. File Operations
@@ -100,6 +111,7 @@ It can be used for the following purposes under UNIX or Linux.
 cat filename
 cat file1 file2 
 cat file1 file2 > newcombinedfile
+cat < file1 > file2 #copy file1 to file2
 ```
 
 ### b. `chmod`
@@ -999,7 +1011,7 @@ Expression Examples:
 
 ```bash
 statement1 && statement2  # both statements are true
-statement1 || statement2  # one of the statement is true
+statement1 || statement2  # at least one of the statements is true
 
 str1=str2       # str1 matches str2
 str1!=str2      # str1 does not match str2
