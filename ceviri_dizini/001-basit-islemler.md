@@ -1,11 +1,11 @@
 # 1. Basic Operations
 
 ### a. `export`
-Displays all environment variables. If you want to get details of a specific variable, use `echo $VARIABLE_NAME`.  
+Tüm ortam değişkenlerini gösterir. Bir değişkenle ilgili detayları almak istiyorsanız: echo $DEGISKEN_ADI
 ```bash
 export
 ```
-Example:
+Örnek:
 ```bash
 $ export
 AWS_HOME=/Users/adnanadnan/.aws
@@ -18,27 +18,27 @@ $ echo $AWS_HOME
 ```
 
 ### b. `whereis`
-whereis searches for executables, source files, and manual pages using a database built by system automatically.
+whereis komutu sistem tarafından otomatik olarak oluşturulan bir veritabanında çalıştırılabilir dosyalar, kaynak dosyalar ve manuel sayfalarını arar.
 ```bash
 whereis name
 ```
-Example:
+Örnek:
 ```bash
 $ whereis php
 /usr/bin/php
 ```
 
 ### c. `which`
-which searches for executables in the directories specified by the environment variable PATH. This command will print the full path of the executable(s).
+which komutu $PATH ortam değişkenindeki çalıştırılabilir dosyaları arar. Bu komut çalıştırılabilir dosyanın tam adresini (full path) yazdırır.
 ```bash
 which program_name 
 ```
-Example:
+Örnek:
 ```bash
 $ which php
 /c/xampp/php/php
 ```
 
 ### d. clear
-Clears content on window.
+Ekrandaki içerikleri temizler.
 
