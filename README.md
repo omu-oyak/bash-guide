@@ -8,7 +8,7 @@
     1.2. [Text Operations](#12-text-operations)  
     1.3. [Directory Operations](#13-directory-operations)  
     1.4. [SSH, System Info & Network Operations](#14-ssh-system-info--network-operations)  
-    1.5. [Process Monitoring Operations (TODO)](#15-process-monitoring-operations)
+    1.5. [Process Monitoring Operations](#15-process-monitoring-operations)
   2. [Basic Shell Programming](#2-basic-shell-programming)  
     2.1. [Variables](#21-variables)  
     2.2  [Array](#22-array)  
@@ -80,25 +80,26 @@ Clears content on window.
    <tr>
       <td><a href="#a-cat">cat</a></td>
       <td><a href="#b-chmod">chmod</a></td>
-      <td><a href="#c-cp">cp</a></td>
-      <td><a href="#d-diff">diff</a></td>
-      <td><a href="#e-file">file</a></td>
-      <td><a href="#f-find">find</a></td>
-      <td><a href="#g-gunzip">gunzip</a></td>
-      <td><a href="#h-gzcat">gzcat</a></td>
-      <td><a href="#i-gzip">gzip</a></td>
-      <td><a href="#j-head">head</a></td>
+      <td><a href="#c-chown">chown</a></td>
+      <td><a href="#d-cp">cp</a></td>
+      <td><a href="#e-diff">diff</a></td>
+      <td><a href="#f-file">file</a></td>
+      <td><a href="#g-find">find</a></td>
+      <td><a href="#h-gunzip">gunzip</a></td>
+      <td><a href="#i-gzcat">gzcat</a></td>
+      <td><a href="#j-gzip">gzip</a></td>
+      <td><a href="#k-head">head</a></td>
    </tr>
    <tr>
-      <td><a href="#k-lpq">lpq</a></td>
-      <td><a href="#l-lpr">lpr</a></td>
-      <td><a href="#m-lprm">lprm</a></td>
-      <td><a href="#n-ls">ls</a></td>
-      <td><a href="#o-more">more</a></td>
-      <td><a href="#p-mv">mv</a></td>
-      <td><a href="#q-rm">rm</a></td>
-      <td><a href="#r-tail">tail</a></td>
-      <td><a href="#s-touch">touch</a></td>
+      <td><a href="#l-lpq">lpq</a></td>
+      <td><a href="#m-lpr">lpr</a></td>
+      <td><a href="#n-lprm">lprm</a></td>
+      <td><a href="#o-ls">ls</a></td>
+      <td><a href="#p-more">more</a></td>
+      <td><a href="#q-mv">mv</a></td>
+      <td><a href="#r-rm">rm</a></td>
+      <td><a href="#s-tail">tail</a></td>
+      <td><a href="#t-touch">touch</a></td>
    </tr>
 </table>
 
@@ -116,25 +117,31 @@ cat < file1 > file2 #copy file1 to file2
 ```
 
 ### b. `chmod`
-Lets you change the read, write, and execute permissions on your files.  
+The chmod command stands for "change mode" and allows you to change the read, write, and execute permissions on your files and folders. For more information on this command check this [link](https://ss64.com/bash/chmod.html).
 ```bash
 chmod -options filename
 ```
 
-### c. `cp`
+### c. `chown`
+The chown command stands for "change owner", and allows you to change the owner of a given file or folder, which can be a user and a group. Basic usage is simple forward first comes the user (owner), and then the group, delimited by a colon.
+```bash
+chown -options user:group filename
+```
+
+### d. `cp`
 Copies a file from one location to other.  
 ```bash
 cp filename1 filename2
 ```
 Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
 
-### d. `diff`
+### e. `diff`
 Compares files, and lists their differences.  
 ```bash
 diff filename1 filename2
 ```
 
-### e. `file`
+### f. `file`
 Determine file type.  
 ```bash
 file filename
@@ -144,7 +151,7 @@ Example:
 $ file index.html
  index.html: HTML document, ASCII text
 ```
-### f. `find`
+### g. `find`
 Find files in directory
 ```bash
 find directory options pattern
@@ -155,31 +162,31 @@ $ find . -name README.md
 $ find /home/user1 -name '*.png'
 ```
 
-### g. `gunzip`
+### h. `gunzip`
 Un-compresses files compressed by gzip.  
 ```bash
 gunzip filename
 ```
 
-### h. `gzcat`
+### i. `gzcat`
 Lets you look at gzipped file without actually having to gunzip it.  
 ```bash
 gzcat filename
 ```
 
-### i. `gzip`
+### j. `gzip`
 Compresses files.  
 ```bash
 gzip filename
 ```
 
-### j. `head`
+### k. `head`
 Outputs the first 10 lines of file  
 ```bash
 head filename
 ```
 
-### k. `lpq`
+### l. `lpq`
 Check out the printer queue.  
 ```bash
 lpq
@@ -192,19 +199,19 @@ active  adnanad 59      demo                            399360 bytes
 1st     adnanad 60      (stdin)                         0 bytes
 ```
 
-### l. `lpr`
+### m. `lpr`
 Print the file.  
 ```bash
 lpr filename
 ```
 
-### m. `lprm`
+### n. `lprm`
 Remove something from the printer queue.  
 ```bash
 lprm jobnumber
 ```
 
-### n. `ls`
+### o. `ls`
 Lists your files. `ls` has many options: `-l` lists files in 'long format', which contains the exact size of the file, who owns the file, who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html).  
 ```bash
 ls option
@@ -222,13 +229,13 @@ drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git
 -rwxr-xr-x   1 adnan  staff    2702 Mar 25 18:08 .gitignore
 </pre>
 
-### o. `more`
+### p. `more`
 Shows the first part of a file (move with space and type q to quit).  
 ```bash
 more filename
 ```
 
-### p. `mv`
+### q. `mv`
 Moves a file from one location to other.  
 ```bash
 mv filename1 filename2
@@ -240,7 +247,7 @@ Also it can be used for rename a file.
 mv old_name new_name
 ```
 
-### q. `rm`
+### r. `rm`
 Removes a file. Using this command on a directory gives you an error.
 `rm: directory: is a directory`
 To remove a directory you have to pass `-r` which will remove the content of the directory recursively. Optionally you can use `-f` flag to force the deletion i.e. without any confirmations etc.
@@ -248,14 +255,14 @@ To remove a directory you have to pass `-r` which will remove the content of the
 rm filename
 ```
 
-### r. `tail`
+### s. `tail`
 Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.  
 ```bash
 tail filename
 ```
 
-### s. `touch`
-Creates or updates your file.  
+### t. `touch`
+Updates access and modification time stamps of your file. If it doesn't exists, it'll be created.
 ```bash
 touch filename
 ```
@@ -720,28 +727,26 @@ pwd
       <td><a href="#e-dig">dig</a></td>
       <td><a href="#f-du">du</a></td>
       <td><a href="#g-fg">fg</a></td>
-      <td><a href="#h-finger">finger</a></td>
-      <td><a href="#i-kill">kill</a></td>
-      <td><a href="#j-killall">killall</a></td>
+      <td><a href="#h-finger">finger</a></td>      
+      <td><a href="#i-last">last</a></td>
+      <td><a href="#j-man">man</a></td>
    </tr>
    <tr>
-      <td><a href="#k-last">last</a></td>
-      <td><a href="#l-man">man</a></td>
-      <td><a href="#m-passwd">passwd</a></td>
-      <td><a href="#n-ping">ping</a></td>
-      <td><a href="#o-ps">ps</a></td>
-      <td><a href="#p-quota">quota</a></td>
-      <td><a href="#q-scp">scp</a></td>
-      <td><a href="#r-ssh">ssh</a></td>
-      <td><a href="#s-top">top</a></td>
-      <td><a href="#t-uname">uname</a></td>
+      <td><a href="#k-passwd">passwd</a></td>
+      <td><a href="#l-ping">ping</a></td>
+      <td><a href="#m-ps">ps</a></td>
+      <td><a href="#n-quota">quota</a></td>
+      <td><a href="#o-scp">scp</a></td>
+      <td><a href="#p-ssh">ssh</a></td>
+      <td><a href="#q-top">top</a></td>
+      <td><a href="#r-uname">uname</a></td>
+      <td><a href="#s-uptime">uptime</a></td>
+      <td><a href="#t-w">w</a></td>
    </tr>
    <tr>
-      <td><a href="#u-uptime">uptime</a></td>
-      <td><a href="#v-w">w</a></td>
-      <td><a href="#w-wget">wget</a></td>
-      <td><a href="#x-whoami">whoami</a></td>
-      <td><a href="#y-whois">whois</a></td>
+      <td><a href="#u-wget">wget</a></td>
+      <td><a href="#v-whoami">whoami</a></td>
+      <td><a href="#w-whois">whois</a></td>
    </tr>
 </table>
 
@@ -787,52 +792,40 @@ Displays information about user.
 finger username
 ```
 
-### i. `kill`
-Kills (ends) the processes with the ID you gave.  
-```bash
-kill PID
-```
-
-### j. `killall`
-Kill all processes with the name.  
-```bash
-killall processname
-```
-
-### k. `last`
+### i. `last`
 Lists your last logins of specified user.  
 ```bash
 last yourUsername
 ```
 
-### l. `man`
+### j. `man`
 Shows the manual for specified command.  
 ```bash
 man command
 ```
 
-### m. `passwd`
+### k. `passwd`
 Allows the current logged user to change his password.
 
-### n. `ping`
+### l. `ping`
 Pings host and outputs results.  
 ```bash
 ping host
 ```
 
-### o. `ps`
+### m. `ps`
 Lists your processes.  
 ```bash
 ps -u yourusername
 ```
 
-### p. `quota`
+### n. `quota`
 Shows what your disk quota is.  
 ```bash
 quota -v
 ```
 
-### q. `scp`
+### o. `scp`
 Transfer files between a local host and a remote host or between two remote hosts.
 
 *copy from local host to remote host*
@@ -849,7 +842,7 @@ This command also accepts an option `-P` that can be used to connect to specific
 scp -P port user@host:directory/source_file target_file
 ```
 
-### r. `ssh`
+### p. `ssh`
 ssh (SSH client) is a program for logging into and executing commands on a remote machine.  
 ```bash
 ssh user@host
@@ -859,34 +852,73 @@ This command also accepts an option `-p` that can be used to connect to specific
 ssh -p port user@host
 ```
 
-### s. `top`
+### q. `top`
 Displays your currently active processes.
 
-### t. `uname`
+### r. `uname`
 Shows kernel information.  
 ```bash
 uname -a
 ```
 
-### u. `uptime`
+### s. `uptime`
 Shows current uptime.
 
-### v. `w`
+### t. `w`
 Displays who is online.
 
-### w. `wget`
+### u. `wget`
 Downloads file.  
 ```bash
 wget file
 ```
 
-### x. `whoami`
+### v. `whoami`
 Return current logged in username.
 
-### y. `whois`
+### w. `whois`
 Gets whois information for domain.  
 ```bash
 whois domain
+```
+
+## 1.5. Process Monitoring Operations
+
+<table>
+   <tr>
+      <td><a href="#a-kill">kill</a></td>
+      <td><a href="#b-killall">killall</a></td>
+      <td><a href="#c-&">&amp;</a></td>
+      <td><a href="#d-nohup">nohup</a></td>
+   </tr>
+</table>
+
+### a. `kill`
+Kills (ends) the processes with the ID you gave.  
+```bash
+kill PID
+```
+
+### b. `killall`
+Kill all processes with the name.  
+```bash
+killall processname
+```
+
+### c. &
+The `&` symbol instructs the command to run as a background process in a subshell.
+```bash
+command &
+```
+
+### d. `nohup`
+nohup stands for "No Hang Up". This allows to run command/process or shell script that can continue running in the background after you log out from a shell.
+```bash
+nohup command
+```
+Combine it with `&` to create background processes 
+```bash
+nohup command &
 ```
 
 # 2. Basic Shell Programming
@@ -1093,6 +1125,37 @@ nano ~/.bashrc
 ```bash
 source ~/.bashrc
 cd $hotellogs
+```
+
+## Exit traps
+
+Make your bash scripts more robust by reliably performing cleanup.
+
+```bash
+function finish {
+  # your cleanup here. e.g. kill any forked processes
+  jobs -p | xargs kill
+}
+trap finish EXIT
+```
+
+## Saving your environment variables
+
+When you do `export FOO = BAR`, your variable is only exported in this current shell and all its children, to persist in the future you can simply append in your `~/.bash_profile` file the command to export your variable
+```bash
+echo export FOO=BAR >> ~/.bash_profile
+```
+
+## Accessing your scripts
+
+You can easily access your scripts by creating a bin folder in your home with `mkdir ~/bin`, now all the scripts you put in this folder you can access in any directory.
+
+If you can not access, try append the code below in your `~/.bash_profile` file and after do `source ~/.bash_profile`.
+```bash
+    # set PATH so it includes user's private bin if it exists
+    if [ -d "$HOME/bin" ] ; then
+        PATH="$HOME/bin:$PATH"
+    fi
 ```
 
 # 4. Debugging
