@@ -1,7 +1,9 @@
 # 2. Basic Shell Programming
 
+Bir kabuk programında yazacağınız ilk satır shebabg olarak adlandırılır.
 
-The first line that you will write in bash script files is called `shebang`. This line in any script determines the script's ability to be executed like a standalone executable without typing sh, bash, python, php etc beforehand in the terminal.
+Bu satır sh, bash, python, php vs. gibi bir çalıştırıcı komut yazmadan , yazdığınız betiğin terminalde hangi program darafından çalıştırılacağını belirtir.
+
 
 ```bash
 #!/bin/bash
