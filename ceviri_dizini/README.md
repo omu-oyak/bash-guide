@@ -6,7 +6,7 @@ No   |        İsim       | Çeviri Sorumlusu   | Tamamlanma Yüzdesi
 001  |   Basit İşlemler  | Serhat Celil İLERİ |       %100
 002  |  Dosya İşlemleri  |          -         |         -
 003  |  Metin İşlemleri  |          -         |         -
-004  |  Dizin İşlemleri  |          -         |         -
+004  |  Dizin İşlemleri  | Serhat Celil İLERİ |       %100
 005  |   SSH-Sistem-Ağ   |          -         |         -
 006  | Temel Kabuk Prog. | Serhat Celil İLERİ |       %100
 007  |    Değişkenler    |          -         |         -
