@@ -9,23 +9,23 @@
 </table>
 
 ### a. `cd`
-Moves you from one directory to other. Running this  
+Sizi bir dizinden bir diğer dizine götürür. Sadece bunu çalıştırmak:
 ```bash
 $ cd
 ```
-moves you to home directory. This command accepts an optional `dirname`, which moves you to that directory.
+sizi ev dizininize götürür. Bu komut opsiyon olarak gitmek istediğiniz dizin adını da alır.
 ```bash
 cd dirname
 ```
 
 ### b. `mkdir`
-Makes a new directory.  
+Yeni dizin oluşturur.
 ```bash
 mkdir dirname
 ```
 
 ### c. `pwd`
-Tells you which directory you currently are in.  
+O an hangi dizinde olduğunuzu gösterir
 ```bash
 pwd
 ```
