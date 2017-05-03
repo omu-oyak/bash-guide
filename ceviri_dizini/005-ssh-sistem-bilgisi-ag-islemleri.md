@@ -35,145 +35,145 @@
 </table>
 
 ### a. `bg`
-Lists stopped or background jobs; resume a stopped job in the background.
+Durdurulan yada arkaplandaki işleri listeler.
 
 ### b. `cal`
-Shows the month's calendar.
+Aylık takvimi gösterir
 
 ### c. `date`
-Shows the current date and time.
+Şuanki zaman ve saati gösterir
 
 ### d. `df`
-Shows disk usage.
+Disk kullanımını gösterir.
 
 ### e. `dig`
-Gets DNS information for domain.  
+Alanadının DNS bilgilerini çeker.
 ```bash
 dig domain
 ```
 
 ### f. `du`
-Shows the disk usage of files or directories. For more information on this command check this [link](http://www.linfo.org/du.html)
+Dosya yada dizinlerin disk kullanımlarını gösterir. Bu komut hakkında daha fazla bilgi için [tıklayın](http://www.linfo.org/du.html)
 ```bash
 du [option] [filename|directory]
 ```
-Options:
-- `-h` (human readable) Displays output it in kilobytes (K), megabytes (M) and gigabytes (G).
-- `-s` (supress or summarize) Outputs total disk space of a directory and supresses reports for subdirectories. 
+Opsiyonlar:
+- `-h` (insan okumasına elverişli) Çıktıyı kilobyte (K), megabyte (M) ve gigabyte (G) biçiminde gösterir.
+- `-s` (toplam) Bir dizinin toplam disk kullanımını gösterir. 
 
-Example:
+Örnek:
 ```bash
 du -sh pictures
 1.4M pictures
 ```
 
 ### g. `fg`
-Brings the most recent job in the foreground.
+Ön plandaki son işlem bilgisini gösterir.
 
 ### h. `finger`
-Displays information about user.  
+Kullanıcı hakkında bilgiler gösterir.  
 ```bash
 finger username
 ```
 
 ### i. `kill`
-Kills (ends) the processes with the ID you gave.  
+Verilen ID li işlemi sonlandırır.  
 ```bash
 kill PID
 ```
 
 ### j. `killall`
-Kill all processes with the name.  
+Verilen isme sahip tüm işlemleri sonlandırır.  
 ```bash
 killall processname
 ```
 
 ### k. `last`
-Lists your last logins of specified user.  
+Belirtilen kullanıcının son oturum açma tarihlerini listeler.  
 ```bash
 last yourUsername
 ```
 
 ### l. `man`
-Shows the manual for specified command.  
+Belirtilen komut için kullanım klavuzunu gösterir.  
 ```bash
 man command
 ```
 
 ### m. `passwd`
-Allows the current logged user to change his password.
+Kullanıcı parolasını değiştirmeyi sağlar.
 
 ### n. `ping`
-Pings host and outputs results.  
+Sunucuya ping gönderir ve sonuçlarını yazar.  
 ```bash
 ping host
 ```
 
 ### o. `ps`
-Lists your processes.  
+İşlemlerinizi gösterir.  
 ```bash
 ps -u yourusername
 ```
 
 ### p. `quota`
-Shows what your disk quota is.  
+Disk kotanızı gösterir.  
 ```bash
 quota -v
 ```
 
 ### q. `scp`
-Transfer files between a local host and a remote host or between two remote hosts.
+Yerelden uzağa, uzaktan yerele yada uzaktan uzağa sunucular arası dosya aktarımını sağlar.
 
-*copy from local host to remote host*
+*yerel sunucudan uzağa kopyala*
 ```bash
 scp source_file user@host:directory/target_file
 ```
-*copy from remote host to local host*
+*uzak sunucudan yerele kopyala*
 ```bash
 scp user@host:directory/source_file target_file
 scp -r user@host:directory/source_folder farget_folder
 ```
-This command also accepts an option `-P` that can be used to connect to specific port.  
+Bu kouta `-P` parametresiyle özel port belirtebilirsiniz.  
 ```bash
 scp -P port user@host:directory/source_file target_file
 ```
 
 ### r. `ssh`
-ssh (SSH client) is a program for logging into and executing commands on a remote machine.  
+ssh (SSH istemcisi) uzak bir makineyi yönetmenizi sağlar.  
 ```bash
 ssh user@host
 ```
-This command also accepts an option `-p` that can be used to connect to specific port.  
+Bu kouta `-P` parametresiyle özel port belirtebilirsiniz.  
 ```bash
 ssh -p port user@host
 ```
 
 ### s. `top`
-Displays your currently active processes.
+Aktif işlemleri listeler.
 
 ### t. `uname`
-Shows kernel information.  
+Kernel bilgisini gösterir.  
 ```bash
 uname -a
 ```
 
 ### u. `uptime`
-Shows current uptime.
+Uptime bilgisini (çalışma zamanını) gösterir.
 
 ### v. `w`
-Displays who is online.
+Kimlerin online olduğunu gösterir.
 
 ### w. `wget`
-Downloads file.  
+Dosya indirir.  
 ```bash
 wget file
 ```
 
 ### x. `whoami`
-Return current logged in username.
+Giriş yapılan kullanıcı adını döndürür.
 
 ### y. `whois`
-Gets whois information for domain.  
+Alanadı için whois bilgisini çeker.  
 ```bash
 whois domain
 ```
