@@ -1,36 +1,36 @@
 ## 2.5. Loops
 
-There are three types of loops in bash. `for`, `while` and `until`.
+bash de 3 tip döngü vardır. `for`, `while` ve `until`.
 
-Different `for` Syntax:
+`for` Sözdizimleri:
 ```bash
 for x := 1 to 10 do
 begin
-  statements
+  komutlar
 end
 
 for name [in list]
 do
-  statements that can use $name
+  $name bilgisini kullanabilen komutlar
 done
 
-for (( initialisation ; ending condition ; update ))
+for (( başlangıç ; bitiş_şartı ; her_döngüde_yapılacak_güncelleme ))
 do
-  statements...
+  komutlar...
 done
 ```
 
-`while` Syntax:
+`while` Sözdizimi:
 ```bash
-while condition; do
-  statements
+while koşul; do
+  komutlar
 done
 ```
 
-`until` Syntax:
+`until` Sözdizimi:
 ```bash
-until condition; do
-  statements
+until koşul; do
+  komutlar
 done
 ```
 
