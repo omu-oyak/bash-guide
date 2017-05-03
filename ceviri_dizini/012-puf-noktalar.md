@@ -1,10 +1,10 @@
-# 3. Tricks
+# 3. Püf Noktalar
 
-## Set an alias
-Open `bash_profile` by running following command `nano ~/.bash_profile`
-> alias dockerlogin='ssh www-data@adnan.local -p2222'  # add your alias in .bash_profile
+## Alias Tanımlama
+`nano ~/.bash_profile` komutunu kullanarak `.bash_profile` dosyasını açın
+> alias dockerlogin='ssh www-data@adnan.local -p2222'  # Aliasınızı .bash_profile e ekleyin
 
-## To quickly go to a specific directory
+## Özel bir dizine çabuk gidebilmek için
 nano ~/.bashrc
 > export hotellogs="/workspace/hotel-api/storage/logs"
 
