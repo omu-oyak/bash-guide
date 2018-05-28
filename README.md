@@ -11,7 +11,7 @@
     1.5. [Process Monitoring Operations](#15-process-monitoring-operations)
   2. [Basic Shell Programming](#2-basic-shell-programming)  
     2.1. [Variables](#21-variables)  
-    2.2  [Array](#22-array)  
+    2.2. [Array](#22-array)  
     2.3. [String Substitution](#23-string-substitution)  
     2.4. [Functions](#24-functions)  
     2.5. [Conditionals](#25-conditionals)  
@@ -727,26 +727,27 @@ pwd
       <td><a href="#e-dig">dig</a></td>
       <td><a href="#f-du">du</a></td>
       <td><a href="#g-fg">fg</a></td>
-      <td><a href="#h-finger">finger</a></td>      
-      <td><a href="#i-last">last</a></td>
-      <td><a href="#j-man">man</a></td>
+      <td><a href="#h-finger">finger</a></td>   
+      <td><a href="#i-jobs">jobs</a></td>
+      <td><a href="#j-last">last</a></td>
    </tr>
    <tr>
-      <td><a href="#k-passwd">passwd</a></td>
-      <td><a href="#l-ping">ping</a></td>
-      <td><a href="#m-ps">ps</a></td>
-      <td><a href="#n-quota">quota</a></td>
-      <td><a href="#o-scp">scp</a></td>
-      <td><a href="#p-ssh">ssh</a></td>
-      <td><a href="#q-top">top</a></td>
-      <td><a href="#r-uname">uname</a></td>
-      <td><a href="#s-uptime">uptime</a></td>
-      <td><a href="#t-w">w</a></td>
+      <td><a href="#k-man">man</a></td>
+      <td><a href="#l-passwd">passwd</a></td>
+      <td><a href="#m-ping">ping</a></td>
+      <td><a href="#n-ps">ps</a></td>
+      <td><a href="#o-quota">quota</a></td>
+      <td><a href="#p-scp">scp</a></td>
+      <td><a href="#q-ssh">ssh</a></td>
+      <td><a href="#r-top">top</a></td>
+      <td><a href="#s-uname">uname</a></td>
+      <td><a href="#t-uptime">uptime</a></td>
    </tr>
    <tr>
-      <td><a href="#u-wget">wget</a></td>
-      <td><a href="#v-whoami">whoami</a></td>
-      <td><a href="#w-whois">whois</a></td>
+      <td><a href="#u-w">w</a></td>
+      <td><a href="#v-wget">wget</a></td>
+      <td><a href="#w-whoami">whoami</a></td>
+      <td><a href="#x-whois">whois</a></td>
    </tr>
 </table>
 
@@ -791,41 +792,47 @@ Displays information about user.
 ```bash
 finger username
 ```
+### i. `jobs`
+Lists the jobs running in the background, giving the job number.
 
-### i. `last`
+### j. `last`
 Lists your last logins of specified user.  
 ```bash
 last yourUsername
 ```
 
-### j. `man`
+### k. `man`
 Shows the manual for specified command.  
 ```bash
 man command
 ```
 
-### k. `passwd`
-Allows the current logged user to change his password.
+### l. `passwd`
+Allows the current logged user to change their password.
 
-### l. `ping`
+### m. `ping`
 Pings host and outputs results.  
 ```bash
 ping host
 ```
 
-### m. `ps`
+### n. `ps`
 Lists your processes.  
 ```bash
 ps -u yourusername
 ```
+Use the flags ef. e for every process and f for full listing. 
+```bash
+ps -ef
+```
 
-### n. `quota`
+### o. `quota`
 Shows what your disk quota is.  
 ```bash
 quota -v
 ```
 
-### o. `scp`
+### p. `scp`
 Transfer files between a local host and a remote host or between two remote hosts.
 
 *copy from local host to remote host*
@@ -835,14 +842,14 @@ scp source_file user@host:directory/target_file
 *copy from remote host to local host*
 ```bash
 scp user@host:directory/source_file target_file
-scp -r user@host:directory/source_folder farget_folder
+scp -r user@host:directory/source_folder target_folder
 ```
 This command also accepts an option `-P` that can be used to connect to specific port.  
 ```bash
 scp -P port user@host:directory/source_file target_file
 ```
 
-### p. `ssh`
+### q. `ssh`
 ssh (SSH client) is a program for logging into and executing commands on a remote machine.  
 ```bash
 ssh user@host
@@ -852,31 +859,31 @@ This command also accepts an option `-p` that can be used to connect to specific
 ssh -p port user@host
 ```
 
-### q. `top`
+### r. `top`
 Displays your currently active processes.
 
-### r. `uname`
+### s. `uname`
 Shows kernel information.  
 ```bash
 uname -a
 ```
 
-### s. `uptime`
+### t. `uptime`
 Shows current uptime.
 
-### t. `w`
+### u. `w`
 Displays who is online.
 
-### u. `wget`
+### v. `wget`
 Downloads file.  
 ```bash
 wget file
 ```
 
-### v. `whoami`
+### w. `whoami`
 Return current logged in username.
 
-### w. `whois`
+### x. `whois`
 Gets whois information for domain.  
 ```bash
 whois domain
@@ -927,7 +934,7 @@ nohup command &
 The first line that you will write in bash script files is called `shebang`. This line in any script determines the script's ability to be executed like a standalone executable without typing sh, bash, python, php etc beforehand in the terminal.
 
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 ```
 
 ## 2.1. Variables
@@ -995,7 +1002,7 @@ ${#varname}     # returns the length of the value of the variable as a character
 As in almost any programming language, you can use functions to group pieces of code in a more logical way or practice the divine art of recursion. Declaring a function is just a matter of writing function my_func { my_code }. Calling a function is just like calling another program, you just write its name.
 
 ```bash
-functname() {
+function name() {
     shell commands
 }
 ```
@@ -1021,7 +1028,7 @@ When you run the above example the `hello` function will output "world!". The ab
 The conditional statement in bash is similar to other programming languages. Conditions have many form like the most basic form is `if` expression `then` statement where statement is only executed if expression is true.
 
 ```bash
-if [expression]; then
+if [ expression ]; then
     will execute only if expression is true
 else
     will execute if expression is false
@@ -1059,7 +1066,7 @@ str1>str2       # str1 is greater than str2
 -f file         # file exists and is a regular file (i.e., not a directory or other special type of file)
 -r file         # you have read permission
 -s file         # file exists and is not empty
--w file         # your have write permission
+-w file         # you have write permission
 -x file         # you have execute permission on file, or directory search permission if it is a directory
 -N file         # file was modified since it was last read
 -O file         # you own file
@@ -1172,6 +1179,11 @@ bash -x scriptname
 - Report issues [How to](https://help.github.com/articles/creating-an-issue/)
 - Open pull request with improvements [How to](https://help.github.com/articles/about-pull-requests/)
 - Spread the word
+
+## Translation
+- [Chinese | 简体中文](https://github.com/vuuihc/bash-guide)
+- [Turkish | Türkçe](https://github.com/omergulen/bash-guide)
+- [Japanese | 日本語](https://github.com/itooww/bash-guide)
 
 ## License
 
